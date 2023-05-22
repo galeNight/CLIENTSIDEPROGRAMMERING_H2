@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    max-width: 600px;
+    min-width: 275px;
+    aspect-ratio: 1/1;
+    /* margin:  0 auto; */
+    /*min-height: 100px;*/
+    /* border:  1px solid red; */
+}
+.Gameborard{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+.Field{
+    background-color: darkmagenta;
+    border: none;
+    color: #ffff;
+    font-size:4em ;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

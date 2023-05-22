@@ -1,0 +1,10 @@
+ #imgLamp{
+    border: 1px solid red;
+    transition:  all 500ms;
+ }
+ .tilleft{
+    transform: rotate(-20deg);
+ }
+ .tilright{
+    transform: rotate(20deg);
+ }
