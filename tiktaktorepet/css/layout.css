@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapper{
+    /* border: 2px solid red; */
+    min-height: 100%;
+    max-width: 550px;
+    min-width: 275px;
+}
+.gameboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* border: 1px solid green; */
+    aspect-ratio: 1/1;
+    grid-gap: 5px;
+}
+.gameboard button{
+    font-size: 4em;
+    background-color: darkmagenta;
+    color: #fff;
+    border: none;
+
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.controls button{
+    width: 100px;
+
+}
+.title{
+    text-align: center;
+    color: green;
+}
+.scoreboard{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.points{
+    font: size 1.4em;;
+}
