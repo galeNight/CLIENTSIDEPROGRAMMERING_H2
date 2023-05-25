@@ -37,3 +37,15 @@
         return await response.json();
     }
 })();
+
+document.addEventListener("DOMContentLoaded",function(Event){
+   
+    var imgSource = ["../img/andromedaGalaxy.jpg","../img/NebulaPink.jpg","../Nebulacolor.jpg"]
+    var currentindex=0;
+    function swapImg(){
+        currentindex=(currentindex+1)%imgSource.length;
+        // img.src=imgSource[currentindex];
+        document.querySelector(".wrapper").style.backgroundImage =`url(${imgSource[currentindex]})`
+    }
+    setInterval(swapImg,2000)
+})
