@@ -1,11 +1,11 @@
 const gameboard = document.querySelector(".gameboard")
-let playerXturn = true;
+let playerXturn = true; // x firts turn always
 let scoreX = 0, scoreO = 0;
-function updatescore() {
+function updatescore() { // places a score
     document.querySelector("#scoreX").innerText = "player X" + scoreX
     document.querySelector("#scoreO").innerText = "player O" + scoreO
 }
-const winner = function () {
+const winner = function () { // checks if you have 3 x or o in eny direction and return true or false
     const fields = document.querySelectorAll(".gameboard button")
     for (let i = 0; i < 3; i++) {
         if (// row
@@ -42,17 +42,15 @@ const winner = function () {
 const setmark = function (e) {
     if (this.innerText !== "") { return }
     if (winner() == true) { return; }
-    this.innerText = playerXturn ? "X" : "O"
-    if (winner() == true) {
+    this.innerText = playerXturn ? "X" : "O" //places a x or o
+    if (winner() == true) { // checks if ther is a winner
         if (playerXturn) { scoreX++; }
         else { scoreO++; }
         updatescore();
-        // let w = `player ${playerXturn? "X" : "O"}`
-        // alert(w)
     }
-    playerXturn = !playerXturn
+    playerXturn = !playerXturn // turn base
 }
-for (let row = 0; row < 3; row++) {
+for (let row = 0; row < 3; row++) { // makes row and col and have button to clic and places x or o
 
     for (let col = 0; col < 3; col++) {
         let btn = document.createElement("button");
@@ -62,7 +60,7 @@ for (let row = 0; row < 3; row++) {
     }
 }
 
-function NewGame() {
+function NewGame() { // reset the board and keeps the score
     const fields = document.querySelectorAll(".gameboard button")
     fields.forEach(f => {
         f.innerText = "";
@@ -71,7 +69,7 @@ function NewGame() {
 }
 document.querySelector("#btnNewGame").addEventListener("click", NewGame)
 
-function ResetGame(){
+function ResetGame(){ //resets the board and score
     const fields=document.querySelectorAll(".gameboard button")
     fields.forEach(f=>{
         f.innerText="";
