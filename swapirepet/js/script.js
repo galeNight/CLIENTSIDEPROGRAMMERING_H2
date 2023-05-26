@@ -1,4 +1,5 @@
- const swapiapp = (async function(){
+import { ignore } from "./modules/filter.js";  
+const swapiapp = (async function(){
     const SWAPIURL = "https://swapi.dev/api"
     const navBar = document.querySelector(".navbar")
     const cardcontainer = document.querySelector(".cardcontainer")
@@ -21,12 +22,14 @@
         e.preventDefault();
         let Data = await GetData(this.href)
         console.log(this.href);
+
         Data.results.forEach(DataItem =>{
             let card = document.createElement("div");
             card.className="card"
             // card.innerText=DataItem.name;
             for(let[k,v] of Object.entries(DataItem)){
-                card.insertAdjacentHTML("beforeend",`<span class="key">${k}</span><span class="val">${v}</span><br>`)
+                if(ignore.includes(k)){continue}
+                card.insertAdjacentHTML("beforeend",`<span class="key">${k.replace( "_", " ")}</span><span class="val">${v}</span><br>`)
             }
             cardcontainer.appendChild(card); 
         })
@@ -44,8 +47,7 @@ document.addEventListener("DOMContentLoaded",function(Event){
     var currentindex=0;
     function swapImg(){
         currentindex=(currentindex+1)%imgSource.length;
-        // img.src=imgSource[currentindex];
         document.querySelector(".wrapper").style.backgroundImage =`url(${imgSource[currentindex]})`
     }
-    setInterval(swapImg,2000)
+    setInterval(swapImg,100000)
 })
