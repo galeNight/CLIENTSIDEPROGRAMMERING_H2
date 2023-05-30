@@ -13,4 +13,9 @@ const ignore = [
     "planets",
     "pilots"
 ]
-export{ignore};
+const ignore2 = [
+    "created",
+    "edited",
+    "url",
+]
+export{ignore, ignore2};

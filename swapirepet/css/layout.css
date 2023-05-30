@@ -44,7 +44,7 @@
     border-radius: 10px;
     overflow-wrap: break-word;
 }
-.active{
+.navbar .active{
     /* text-decoration: underline; */
     color: #00FFFF;
 }
@@ -52,7 +52,6 @@
     text-transform: capitalize;
 }
 .pageing{
-
     height: 30px;
     display: flex;
     justify-content: space-evenly;
@@ -62,3 +61,4 @@
     color:gold;
     text-decoration: none;
 }
+
