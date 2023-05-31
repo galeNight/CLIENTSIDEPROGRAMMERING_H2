@@ -61,4 +61,12 @@
     color:gold;
     text-decoration: none;
 }
-
+.bactbtncon{
+display: flex;
+justify-content: end;
+}
+.btnBack{
+    color: red;
+background-color: transparent;
+    opacity: .9;
+}
